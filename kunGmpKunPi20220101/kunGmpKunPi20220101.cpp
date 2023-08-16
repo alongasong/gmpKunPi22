@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿// kunGmpKunPi20220101.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //Paper20220101附加代码，需要完整论文及代码……请联系： 41313989@qq.com 或 hongkun@umass.edu
 #include <cmath>
@@ -125,16 +124,16 @@ void Chudnovsky::compPi()
     }
     cout.precision(100);
     cout << pi << endl;
-//    cout << "[16进制H:" << hex << pi << endl;
-    //
-    // --------------------------------------------------
-      // 转换为十进制字符串
-  
-     // 输出为十进制
+    //    cout << "[16进制H:" << hex << pi << endl;
+        //
+        // --------------------------------------------------
+          // 转换为十进制字符串
+
+         // 输出为十进制
     std::cout << "Decimal representation: " << std::endl;
     mp_exp_t expo;
     std::string D = pi.get_str(expo, 10, 100);
-        //mpf_get_str(nullptr, 10, 0, pi.get_mpf_t());
+    //mpf_get_str(nullptr, 10, 0, pi.get_mpf_t());
     for (int i = 0; i < D.size(); i++) {
         std::cout << D[i];
         if ((i + 1) % 20 == 0) {
@@ -147,7 +146,7 @@ void Chudnovsky::compPi()
     cout << "[16进制H:" << hex << pi;// << endl;
     std::cout << std::endl << "Hexadecimal representation: " << std::endl;
     std::string H = pi.get_str(expo, 16, 100);
-        //mpf_get_str(nullptr, 16, 0, pi.get_mpf_t());
+    //mpf_get_str(nullptr, 16, 0, pi.get_mpf_t());
     for (int i = 0; i < H.size(); i++) {
         std::cout << H[i];
         if ((i + 1) % 8 == 0) {
@@ -162,7 +161,7 @@ void Chudnovsky::compPi()
 }//void Chudnovsky::compPi(
 
 char tmpFilenam01[] = { "aPi20220101.txt" };
-int main(int argc, char **argv)
+int main(int argc, char** argv)
 {
     if (argc <= 1 || argc > 3)
     {
@@ -170,10 +169,10 @@ int main(int argc, char **argv)
         DIGITS = 100;// 99;//Default Digits=99
         FILENAME = tmpFilenam01;
 
-//        return 1;
+        //        return 1;
     }
     else {//if110else110
-//        cout << "Compute pi(π) by Binary Splitting Algorithm with GMP libarary."<< endl;
+        //        cout << "Compute pi(π) by Binary Splitting Algorithm with GMP libarary."<< endl;
 
         DIGITS = stoi(argv[1]);
         FILENAME = argv[2];
@@ -229,25 +228,3 @@ f34e90e8
 这个16进制数
 命名为Kun数,或“新密率3243f6a”数
 */
-=======
-// kunGmpKunPi20220101.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
-#include <iostream>
-
-int main()
-{
-    std::cout << "Hello World!\n";
-}//main
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
->>>>>>> fb94fb715ab00ea7f616f793c450051ed2c1728f
