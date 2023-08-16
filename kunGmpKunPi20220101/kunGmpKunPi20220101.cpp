@@ -8,9 +8,10 @@
 
 using namespace std;
 
-const string MSG_USAGE = "Usage:\nKun_pi n <file>\n\nwhere <file> is one of:\n\t- A legal file name for saving pi value or\n\t- BLANK, will just compute without saving.\n\nThe n is an integer number specifying the pi digits to compute\n\nExample:\nKun_pi 1024 Pi.txt\n";
+const string MSG_USAGE = "Usage:\nKun_pi n <file> <file16>\n\nwhere <file> is one of:\n\t- A legal file name for saving pi value or\n\t- BLANK, will just compute without saving.\n\nThe n is an integer number specifying the pi digits to compute\n\nExample:\nKun_pi 1024 Pi.txt\n";
 
 char* FILENAME;
+char* FILENAM16E;
 unsigned int DIGITS;
 
 struct PQT
@@ -107,14 +108,28 @@ void Chudnovsky::compPi()
     if (FILENAME != NULL)
     {
         ofstream ofs(FILENAME);
+        ofstream ofs16(FILENAM16E);
+
         ofs.precision(DIGITS + 1);
         ofs << pi << endl;
+
+        mp_exp_t expo;
+        std::string H = pi.get_str(expo, 16, 100);
+        //mpf_get_str(nullptr, 16, 0, pi.get_mpf_t());
+        for (int i = 0; i < H.size(); i++) {
+            ofs16 << H[i];// std::cout << H[i];
+            if ((i + 1) % 8 == 0) {
+                ofs16 << std::endl;// std::cout << std::endl;
+            }
+        }
+
 
         // Time (end of writing)
         t2 = clock();
 
         // Get file size
         ifstream in(FILENAME, ios::binary | ios::ate);
+        ifstream in16(FILENAM16E, ios::binary | ios::ate);
 
         cout << "TIME (WRITE)  : "
             << (double)(t2 - t1) / CLOCKS_PER_SEC
@@ -161,13 +176,16 @@ void Chudnovsky::compPi()
 }//void Chudnovsky::compPi(
 
 char tmpFilenam01[] = { "aPi20220101.txt" };
+char tmpFilenam02_16[] = { "aPi20220101_16.txt" };
 int main(int argc, char** argv)
 {
-    if (argc <= 1 || argc > 3)
+    if (argc <= 1 || argc > 4)//3)
     {
         cerr << MSG_USAGE;
         DIGITS = 100;// 99;//Default Digits=99
         FILENAME = tmpFilenam01;
+        FILENAM16E = tmpFilenam02_16;
+
 
         //        return 1;
     }
@@ -176,6 +194,7 @@ int main(int argc, char** argv)
 
         DIGITS = stoi(argv[1]);
         FILENAME = argv[2];
+        FILENAM16E = argv[3];
     }//if110else110
     cout << "Compute pi(π) by Binary Splitting Algorithm with GMP libarary."
         << endl;
