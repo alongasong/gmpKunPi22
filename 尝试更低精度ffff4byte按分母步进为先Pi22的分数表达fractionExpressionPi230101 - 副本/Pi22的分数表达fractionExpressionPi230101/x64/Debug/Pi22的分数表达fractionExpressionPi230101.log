@@ -1,0 +1,5 @@
+﻿  Pi22的分数表达fractionExpressionPi230101.cpp
+E:\Git\gmpKunPi2201\尝试更低精度ffff4byte按分母步进为先Pi22的分数表达fractionExpressionPi230101 - 副本\Pi22的分数表达fractionExpressionPi230101\Pi22的分数表达fractionExpressionPi230101.cpp(34,20): warning C4244: “=”: 从“long double”转换到“ULL”，可能丢失数据
+E:\Git\gmpKunPi2201\尝试更低精度ffff4byte按分母步进为先Pi22的分数表达fractionExpressionPi230101 - 副本\Pi22的分数表达fractionExpressionPi230101\Pi22的分数表达fractionExpressionPi230101.cpp(42,13): warning C4244: “=”: 从“unsigned __int64”转换到“long double”，可能丢失数据
+E:\Git\gmpKunPi2201\尝试更低精度ffff4byte按分母步进为先Pi22的分数表达fractionExpressionPi230101 - 副本\Pi22的分数表达fractionExpressionPi230101\Pi22的分数表达fractionExpressionPi230101.cpp(94,38): warning C4244: “=”: 从“double”转换到“UnI”，可能丢失数据
+  Pi22的分数表达fractionExpressionPi230101.vcxproj -> E:\Git\gmpKunPi2201\尝试更低精度ffff4byte按分母步进为先Pi22的分数表达fractionExpressionPi230101 - 副本\x64\Debug\Pi22的分数表达fractionExpressionPi230101.exe
